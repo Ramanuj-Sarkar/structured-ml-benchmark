@@ -1,0 +1,274 @@
+{
+  "data": {
+    "rows": 150000,
+    "train": 120000,
+    "test": 30000,
+    "positive_rate": 0.06684,
+    "n_features": 27,
+    "feature_names": [
+      "DebtRatio",
+      "MonthlyIncome_log",
+      "NumberOfDependents",
+      "NumberOfOpenCreditLinesAndLoans",
+      "NumberOfTime30-59DaysPastDueNotWorse",
+      "NumberOfTime60-89DaysPastDueNotWorse",
+      "NumberOfTimes90DaysLate",
+      "NumberRealEstateLoansOrLines",
+      "RevolvingUtilizationOfUnsecuredLines",
+      "age",
+      "age_decade",
+      "age_outlier_flag",
+      "any_delinquency_flag",
+      "debt_income_ratio_flag",
+      "delinquency_rate",
+      "dependents_missing_flag",
+      "high_utilization_flag",
+      "income_missing_flag",
+      "income_per_dependent",
+      "income_to_age",
+      "max_delinquency",
+      "pd_sentinel_flag",
+      "real_estate_share",
+      "total_delinquency",
+      "utilization_bucket",
+      "utilization_x_debt",
+      "utilization_x_income"
+    ]
+  },
+  "tuning": {
+    "xgb": {
+      "best_oof_auc": 0.8645465330767651,
+      "best_params": {
+        "learning_rate": 0.027270582972416274,
+        "max_depth": 3,
+        "min_child_weight": 1.764037940058419,
+        "subsample": 0.6519686021341886,
+        "colsample_bytree": 0.7378524631129668,
+        "reg_lambda": 0.04794331361918269
+      },
+      "top5_history": [
+        {
+          "auc": 0.8645465330767651,
+          "params": "{'learning_rate': np.float64(0.027270582972416274), 'max_depth': 3, 'min_child_weight': np.float64(1.764037940058419), 'subsample': np.float64(0.6519686021341886), 'colsample_bytree': np.float64(0.7378524631129668), 'reg_lambda': np.float64(0.04794331361918269)}"
+        },
+        {
+          "auc": 0.8637182953601581,
+          "params": "{'learning_rate': np.float64(0.011886525245342885), 'max_depth': 6, 'min_child_weight': np.float64(11.933641310374858), 'subsample': np.float64(0.8526657596488258), 'colsample_bytree': np.float64(0.8790438700426869), 'reg_lambda': np.float64(0.11576516747459555)}"
+        },
+        {
+          "auc": 0.86370785261724,
+          "params": "{'learning_rate': np.float64(0.0813285339384323), 'max_depth': 6, 'min_child_weight': np.float64(13.093677743157599), 'subsample': np.float64(0.8789472116237456), 'colsample_bytree': np.float64(0.5470886739438248), 'reg_lambda': np.float64(8.450201302139062)}"
+        },
+        {
+          "auc": 0.8636763178605456,
+          "params": "{'learning_rate': np.float64(0.08283399149572312), 'max_depth': 6, 'min_child_weight': np.float64(5.494767940940439), 'subsample': np.float64(0.655918799251063), 'colsample_bytree': np.float64(0.5572650367679868), 'reg_lambda': np.float64(1.0120661170730878)}"
+        },
+        {
+          "auc": 0.8633991890960454,
+          "params": "{'learning_rate': np.float64(0.03581394235253826), 'max_depth': 5, 'min_child_weight': np.float64(5.437373035579435), 'subsample': np.float64(0.9059995429664103), 'colsample_bytree': np.float64(0.8173591600002954), 'reg_lambda': np.float64(0.4578657964048662)}"
+        }
+      ]
+    },
+    "lgbm": {
+      "best_oof_auc": 0.8633014156519425,
+      "best_params": {
+        "learning_rate": 0.09405237940104584,
+        "num_leaves": 41,
+        "min_child_samples": 66,
+        "subsample": 0.9032350960341495,
+        "colsample_bytree": 0.6772629840649342,
+        "reg_alpha": 7.634702129562378,
+        "reg_lambda": 3.7366677629315164
+      },
+      "top5_history": [
+        {
+          "auc": 0.8633014156519425,
+          "params": "{'learning_rate': np.float64(0.09405237940104584), 'num_leaves': 41, 'min_child_samples': 66, 'subsample': np.float64(0.9032350960341495), 'colsample_bytree': np.float64(0.6772629840649342), 'reg_alpha': np.float64(7.634702129562378), 'reg_lambda': np.float64(3.7366677629315164)}"
+        },
+        {
+          "auc": 0.8628717440150783,
+          "params": "{'learning_rate': np.float64(0.06661555729568852), 'num_leaves': 19, 'min_child_samples': 38, 'subsample': np.float64(0.9329039205580805), 'colsample_bytree': np.float64(0.902382178748401), 'reg_alpha': np.float64(0.035474273997484596), 'reg_lambda': np.float64(0.014233523270429193)}"
+        },
+        {
+          "auc": 0.8628131702419639,
+          "params": "{'learning_rate': np.float64(0.100850927096016), 'num_leaves': 12, 'min_child_samples': 31, 'subsample': np.float64(0.6233210966756264), 'colsample_bytree': np.float64(0.6406919460109983), 'reg_alpha': np.float64(0.01494084055423008), 'reg_lambda': np.float64(0.4442895095455176)}"
+        },
+        {
+          "auc": 0.8622945613280815,
+          "params": "{'learning_rate': np.float64(0.057179998514293354), 'num_leaves': 56, 'min_child_samples': 84, 'subsample': np.float64(0.7773656795309325), 'colsample_bytree': np.float64(0.6136193608923884), 'reg_alpha': np.float64(0.16532523475753858), 'reg_lambda': np.float64(0.0017999855738190494)}"
+        },
+        {
+          "auc": 0.8620232994044371,
+          "params": "{'learning_rate': np.float64(0.04519814857016642), 'num_leaves': 68, 'min_child_samples': 80, 'subsample': np.float64(0.865725416130955), 'colsample_bytree': np.float64(0.7031934307200353), 'reg_alpha': np.float64(1.8033562887022723), 'reg_lambda': np.float64(0.004654699829785963)}"
+        }
+      ]
+    },
+    "cat": {
+      "best_oof_auc": 0.8649069037345851,
+      "best_params": {
+        "learning_rate": 0.011259451280146757,
+        "depth": 6,
+        "l2_leaf_reg": 10.208128465557413,
+        "bagging_temperature": 0.7447621559078171,
+        "random_strength": 0.96750973243421
+      },
+      "top5_history": [
+        {
+          "auc": 0.8649069037345851,
+          "params": "{'learning_rate': np.float64(0.011259451280146757), 'depth': 6, 'l2_leaf_reg': np.float64(10.208128465557413), 'bagging_temperature': np.float64(0.7447621559078171), 'random_strength': np.float64(0.96750973243421)}"
+        },
+        {
+          "auc": 0.8647816236636324,
+          "params": "{'learning_rate': np.float64(0.033860624586668886), 'depth': 6, 'l2_leaf_reg': np.float64(23.385370943065357), 'bagging_temperature': np.float64(0.6438651200806645), 'random_strength': np.float64(0.82276161327083)}"
+        },
+        {
+          "auc": 0.8646558325612816,
+          "params": "{'learning_rate': np.float64(0.024165754305989797), 'depth': 4, 'l2_leaf_reg': np.float64(3.525444692390432), 'bagging_temperature': np.float64(0.4695558112758079), 'random_strength': np.float64(0.1894713590842857)}"
+        },
+        {
+          "auc": 0.8645541751672167,
+          "params": "{'learning_rate': np.float64(0.014216724477091986), 'depth': 7, 'l2_leaf_reg': np.float64(2.163578327005832), 'bagging_temperature': np.float64(0.6698139946825103), 'random_strength': np.float64(0.43715191887233074)}"
+        },
+        {
+          "auc": 0.8644027311793624,
+          "params": "{'learning_rate': np.float64(0.09534667398641265), 'depth': 6, 'l2_leaf_reg': np.float64(10.823717935982184), 'bagging_temperature': np.float64(0.31236664138204107), 'random_strength': np.float64(0.8322598013952011)}"
+        }
+      ]
+    },
+    "lr": {
+      "best_params": {
+        "lr__C": 70.72114131472235
+      }
+    }
+  },
+  "cv": {
+    "xgb": {
+      "auc": {
+        "mean": 0.8648234614573278,
+        "std": 0.0035189580813764824
+      },
+      "pr_auc": {
+        "mean": 0.40180707312694963,
+        "std": 0.005163754672459253
+      },
+      "ks": {
+        "mean": 0.5770312333479282,
+        "std": 0.006940829301458183
+      },
+      "gini": {
+        "mean": 0.7296469229146556,
+        "std": 0.007037916162752965
+      },
+      "brier": {
+        "mean": 0.04902684167027473,
+        "std": 0.0002510515350113681
+      },
+      "log_loss": {
+        "mean": 0.1777399778366089,
+        "std": 0.001264574039823655
+      }
+    },
+    "lgbm": {
+      "auc": {
+        "mean": 0.8635899519016933,
+        "std": 0.002974529849225236
+      },
+      "pr_auc": {
+        "mean": 0.4002590852315013,
+        "std": 0.006281019209796262
+      },
+      "ks": {
+        "mean": 0.5764516753424709,
+        "std": 0.006693837434379578
+      },
+      "gini": {
+        "mean": 0.7271799038033864,
+        "std": 0.005949059698450473
+      },
+      "brier": {
+        "mean": 0.04911542436062175,
+        "std": 0.00027473787397824204
+      },
+      "log_loss": {
+        "mean": 0.17823565944944403,
+        "std": 0.0012331556765073587
+      }
+    },
+    "cat": {
+      "auc": {
+        "mean": 0.865058061941132,
+        "std": 0.003447905875441216
+      },
+      "pr_auc": {
+        "mean": 0.4037658564612355,
+        "std": 0.00496464103547651
+      },
+      "ks": {
+        "mean": 0.5786116531665858,
+        "std": 0.008720784412207794
+      },
+      "gini": {
+        "mean": 0.730116123882264,
+        "std": 0.006895811750882432
+      },
+      "brier": {
+        "mean": 0.04895714646299141,
+        "std": 0.00022955778680505215
+      },
+      "log_loss": {
+        "mean": 0.17752807975705837,
+        "std": 0.0011637553935816593
+      }
+    }
+  },
+  "test": {
+    "xgb": {
+      "auc": 0.869928652204103,
+      "pr_auc": 0.41057885777688335,
+      "ks": 0.5846284449618943,
+      "gini": 0.739857304408206,
+      "brier": 0.048489734530448914,
+      "log_loss": 0.17548704147338867,
+      "n_estimators": 484
+    },
+    "lgbm": {
+      "auc": 0.8694300059816524,
+      "pr_auc": 0.4043233180721157,
+      "ks": 0.5838141741556093,
+      "gini": 0.7388600119633049,
+      "brier": 0.04873941302556807,
+      "log_loss": 0.17609158389353924,
+      "n_estimators": 53
+    },
+    "cat": {
+      "auc": 0.8702188536517252,
+      "pr_auc": 0.4119304426239947,
+      "ks": 0.5808053540020283,
+      "gini": 0.7404377073034505,
+      "brier": 0.04848385793837827,
+      "log_loss": 0.17544429339423714,
+      "n_estimators": 1066
+    },
+    "logistic_regression": {
+      "auc": 0.8638907375248251,
+      "pr_auc": 0.3947134964823086,
+      "ks": 0.5740958373845704,
+      "gini": 0.7277814750496503,
+      "brier": 0.14467971843902505,
+      "log_loss": 0.4681565441478231
+    }
+  },
+  "threshold": {
+    "model": "cat",
+    "youden_threshold": 0.06917763058376453,
+    "confusion_matrix": {
+      "tn": 22473,
+      "fp": 5522,
+      "fn": 445,
+      "tp": 1560
+    },
+    "precision": 0.22027675797797233,
+    "recall": 0.7780548628428927,
+    "f1": 0.34334763948497854
+  }
+}
